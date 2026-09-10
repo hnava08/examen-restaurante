@@ -1,0 +1,29 @@
+@page
+@model Restaurante.Pages.Categorias.IndexModel
+@{
+    ViewData["Title"] = "Categorias";
+}
+
+<h1>Categorias</h1>
+
+<p>
+    <a class="btn btn-primary" asp-page="Create">Nueva Categoria</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Categorias)
+{
+        <tr>
+            <td>@item.Nombre</td>
+            <td>@item.Descripcion</td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,27 @@
+@page
+@model Restaurante.Pages.Categorias.CreateModel
+@{
+    ViewData["Title"] = "Nueva Categoria";
+}
+
+<h1>Nueva Categoria</h1>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="mb-3">
+        <label asp-for="Categoria.Nombre" class="form-label"></label>
+        <input asp-for="Categoria.Nombre" class="form-control" />
+        <span asp-validation-for="Categoria.Nombre" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Categoria.Descripcion" class="form-label"></label>
+        <textarea asp-for="Categoria.Descripcion" class="form-control"></textarea>
+        <span asp-validation-for="Categoria.Descripcion" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-page="./Index" class="btn btn-secondary">Cancelar</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

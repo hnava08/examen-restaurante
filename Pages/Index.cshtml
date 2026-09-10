@@ -1,0 +1,14 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="text-center mt-5">
+    <h1 class="display-4">Restaurante</h1>
+    <p class="lead">Sistema de gestion de categorias y platos</p>
+    <div class="mt-4">
+        <a class="btn btn-primary btn-lg me-2" asp-page="/Categorias/Index">Categorias</a>
+        <a class="btn btn-success btn-lg" asp-page="/Platos/Index">Platos</a>
+    </div>
+</div>

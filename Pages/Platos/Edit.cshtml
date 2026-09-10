@@ -1,0 +1,40 @@
+@page "{id:int}"
+@model Restaurante.Pages.Platos.EditModel
+@{
+    ViewData["Title"] = "Editar Plato";
+}
+
+<h1>Editar Plato</h1>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Plato.Id" />
+    <div class="mb-3">
+        <label asp-for="Plato.Nombre" class="form-label"></label>
+        <input asp-for="Plato.Nombre" class="form-control" />
+        <span asp-validation-for="Plato.Nombre" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Plato.Descripcion" class="form-label"></label>
+        <textarea asp-for="Plato.Descripcion" class="form-control"></textarea>
+        <span asp-validation-for="Plato.Descripcion" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Plato.Precio" class="form-label"></label>
+        <input asp-for="Plato.Precio" class="form-control" />
+        <span asp-validation-for="Plato.Precio" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Plato.CategoriaId" class="form-label"></label>
+        <select asp-for="Plato.CategoriaId" class="form-select" asp-items="Model.CategoriasSelectList">
+            <option value="">-- Seleccione --</option>
+        </select>
+        <span asp-validation-for="Plato.CategoriaId" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-page="./Index" class="btn btn-secondary">Cancelar</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

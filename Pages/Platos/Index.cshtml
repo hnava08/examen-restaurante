@@ -1,0 +1,37 @@
+@page
+@model Restaurante.Pages.Platos.IndexModel
+@{
+    ViewData["Title"] = "Platos";
+}
+
+<h1>Platos</h1>
+
+<p>
+    <a class="btn btn-primary" asp-page="Create">Nuevo Plato</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+            <th>Categoria</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Platos)
+{
+        <tr>
+            <td>@item.Nombre</td>
+            <td>@item.Descripcion</td>
+            <td>@item.Precio.ToString("C")</td>
+            <td>@item.Categoria?.Nombre</td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Editar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
